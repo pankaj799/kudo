@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Like - admin</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- Material Kit CSS -->
+  <link href="/public/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="white">
+      <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+      <div class="logo">
+        <h4 class="simple-text logo-mini">KUDO</h4>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/adminpanel">
+              <i class="material-icons">dashboard</i>
+              <p>Responder Messages</p>
+            </a>
+        </li>
+        <li>
+            <a class="nav-link" href="/allusers">
+                <i class="material-icons">dashboard</i>
+                <p>Users Details</p>
+              </a>
+        </li>
+          <li  class="nav-item active  ">
+            <a class="nav-link" href="/allsubscriptions">
+                <i class="material-icons">dashboard</i>
+                <p>Subscription Plans</p>
+              </a>
+          </li>
+          <!-- your sidebar here -->
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="javascript:;">Subscription Plans</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+          <div>
+            <!-- <a href="/addpost" class="btn btn-primary">Add Posts</a> -->
+            <!-- <a href="/editpost" class="btn btn-primary">Mange Posts</a> -->
+          </div>
+          <div>
+            <h3>Edit Subscription Plans</h1>
+          </div>
+          <div>
+            <form action="/editsubscription" method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                  <label for="exampleInputEmail1" class="font-weight-bold">Price</label>
+                  <input type="text" class="form-control" placeholder="Price" name="price" value="<%= data.price %>">
+              </div>
+              <div class="form-group">
+                  <label for="exampleInputEmail1" class="font-weight-bold">Plan</label>
+                  <input type="text" class="form-control" placeholder="Plan" name="timeperiod" value="<%= data.timeperiod %>">
+              </div>
+              <input type="hidden"  value="<%= data._id %>" name="user_id">
+              <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+          </div>
+          
+        </div>
+      </div>
+      <footer class="footer">
+        
+          
+          <!-- your footer here -->
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>
